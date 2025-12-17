@@ -40,6 +40,7 @@ tmp
 compile_commands.json
 .project_alt.json
 CMakeUserPresets.json
+.cache
 
 # Custom
 

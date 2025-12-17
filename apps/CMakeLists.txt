@@ -9,4 +9,4 @@ target_link_libraries( app_base
     )
 
 # add apps
-#APP_TARGET(app_xxx app_xxx.cc app_base)
+APP_TARGET_WITH_STRIP( log_print log_print.cc app_base)

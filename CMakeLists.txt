@@ -9,13 +9,23 @@ project(sequoia
 # Define relative dir for ${CMAKE_SOURCE_DIR}
 set(PROJECT_SRC_DIR "sequoia")
 
-# find_package(framework CONFIG REQUIRED)
 ######################################################################################
-##                              Compiler											##
+##                              INIT						    ##
 ######################################################################################
-# set(CMAKE_C_FLAGS " xxx")
-# set(CMAKE_CXX_FLAGS " xxx")
-
+find_package(spdlog REQUIRED)
+find_package(doctest REQUIRED)
+######################################################################################
+##                              Compiler					    ##
+######################################################################################
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(PROJECT_CMAKE_C_FLAGS "${PROJECT_CMAKE_C_FLAGS} -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function -Wno-shorten-64-to-32")
+    set(PROJECT_CMAKE_CXX_FLAGS "${PROJECT_CMAKE_CXX_FLAGS} -Wno-deprecated -Wno-register -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function -Wno-unused-private-field -Wno-shorten-64-to-32 -Wno-vla-extension")
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    set(PROJECT_CMAKE_C_FLAGS "${PROJECT_CMAKE_C_FLAGS} -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function -Wno-deprecated-declarations")
+    set(PROJECT_CMAKE_CXX_FLAGS "${PROJECT_CMAKE_CXX_FLAGS} -Wno-register -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function -Wno-deprecated-declarations")
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    set(PROJECT_CMAKE_CXX_FLAGS "${PROJECT_CMAKE_CXX_FLAGS} /WX")
+endif()
 ######################################################################################
 ##                              Config Project                                      ##
 ######################################################################################

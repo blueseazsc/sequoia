@@ -1,4 +1,4 @@
-PROJECT_INIT_TARGET_VARIABLE(helloworld)
+PROJECT_INIT_TARGET_VARIABLE(utility)
 
 add_library( ${TARGET_NAME} OBJECT )
 
@@ -16,6 +16,9 @@ target_include_directories( ${TARGET_NAME}
 	)
 target_link_libraries(${TARGET_NAME}
 	PUBLIC
+	spdlog::spdlog
+	${CMAKE_DL_LIBS}
+	Threads::Threads
 	)
 
 ######################################################################################

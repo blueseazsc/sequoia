@@ -13,6 +13,11 @@ class Project(ConanFile):
         self.revision_mode = base.revision_mode
 
     # difference between project:
-    # def requirements(self):
+    def requirements(self):
+        self.requires("spdlog/1.14.1")
+        self.requires("doctest/2.4.11")
 
+    def build_requirements(self):
+        super().build_requirements()
+    
     # def package_info(self):

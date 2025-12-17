@@ -5,9 +5,11 @@ target_include_directories( test_base
     )
 target_link_libraries( test_base
     INTERFACE
-    doctest::doctest
     sequoia_static
+    spdlog::spdlog
+	doctest::doctest
+    Threads::Threads
     )
 
 # add tests
-#TEST_TARGET(test_xxx test_xxx.cc test_base)
+TEST_TARGET(log_test log_test.cc test_base)
