@@ -1,9 +1,9 @@
-#include <sequoia/utility/log.h>
+#include <sequoia/utils/log.h>
 #include <thread>
 #include <chrono>
 #include <iostream>
 
-using namespace sequoia::utility;
+using namespace sequoia::utils;
 
 void func(int index) {
 	log::Logger::defaultLogger()->set_level(log::LogLevel::trace);

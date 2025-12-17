@@ -1,10 +1,10 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
 #include <doctest/doctest.h>
-#include <sequoia/utility/log.h>
+#include <sequoia/utils/log.h>
 #include <string>
 
-using namespace sequoia::utility::log;
+using namespace sequoia::utils::log;
 
 int PrintAll() {
 	std::string str = "str_test!";

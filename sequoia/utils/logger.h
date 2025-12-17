@@ -6,7 +6,7 @@
 #include <string>
 #include <mutex>
 
-namespace sequoia::utility::log {
+namespace sequoia::utils::log {
 
 enum class LogLevel {
     trace = spdlog::level::level_enum::trace,

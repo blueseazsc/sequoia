@@ -9,7 +9,7 @@
 #define LOG_SECTION_NAME "SEQUOIA"
 #define LOG_LEVEL_NAMES { "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL", "OFF" }
 
-namespace sequoia::utility::log {
+namespace sequoia::utils::log {
 
 std::atomic<int32_t> Logger::default_logger_index_{0};
 std::mutex Logger::default_logger_mutex_;
@@ -128,4 +128,4 @@ void Logger::shutdown() {
 	default_logger_index_ = cooldown_index;
 }
 
-} // namespace sequoia::utility::log
+} // namespace sequoia::utils::log
