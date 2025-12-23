@@ -16,6 +16,7 @@ target_include_directories( ${TARGET_NAME}
 	)
 target_link_libraries(${TARGET_NAME}
 	PUBLIC
+	iconv
 	spdlog::spdlog
 	${CMAKE_DL_LIBS}
 	Threads::Threads

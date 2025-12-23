@@ -32,6 +32,7 @@ endif()
 set(EXTERNAL_PROJECT_DIR ${PROJECT_SOURCE_DIR}/external/project)
 list( APPEND CMAKE_MODULE_PATH "${EXTERNAL_PROJECT_DIR}/cmake" )
 
+set(PROJECT_CMAKE_CXX_STANDARD 20)
 # After set environment variable, we includ project cmake.
 include(Project)
 
