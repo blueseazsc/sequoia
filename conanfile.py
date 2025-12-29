@@ -16,8 +16,10 @@ class Project(ConanFile):
     def requirements(self):
         self.requires("spdlog/1.14.1")
         self.requires("doctest/2.4.11")
+        self.requires("odb/2.5.0", transitive_headers=True, transitive_libs=True)
 
     def build_requirements(self):
         super().build_requirements()
+        self.tool_requires("odb/2.5.0")
     
     # def package_info(self):
