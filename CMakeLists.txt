@@ -10,13 +10,18 @@ project(sequoia
 set(PROJECT_SRC_DIR "sequoia")
 
 ######################################################################################
-##                              INIT						    ##
+##                              INIT						                        ##
 ######################################################################################
 find_package(spdlog REQUIRED)
 find_package(doctest REQUIRED)
 find_package(odb CONFIG REQUIRED)
+find_package(tracy CONFIG REQUIRED)
 ######################################################################################
-##                              Compiler					    ##
+##                              Options                                             ##
+######################################################################################
+option(UTIL_TRACE_ENABLE "Enable tracing utilities" ON)
+######################################################################################
+##                              Compiler					                        ##
 ######################################################################################
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     set(PROJECT_CMAKE_C_FLAGS "${PROJECT_CMAKE_C_FLAGS} -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function -Wno-shorten-64-to-32")

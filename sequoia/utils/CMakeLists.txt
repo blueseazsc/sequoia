@@ -14,6 +14,7 @@ target_include_directories( ${TARGET_NAME}
 	"$<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>"
 	"$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>"
 	)
+
 target_link_libraries(${TARGET_NAME}
 	PUBLIC
 	iconv
@@ -21,6 +22,17 @@ target_link_libraries(${TARGET_NAME}
 	${CMAKE_DL_LIBS}
 	Threads::Threads
 	)
+
+if (UTIL_TRACE_ENABLE)
+target_compile_definitions(${TARGET_NAME}
+	PUBLIC
+	UTIL_TRACE_ENABLE=1
+	)
+target_link_libraries(${TARGET_NAME}
+	PUBLIC
+	Tracy::TracyClient
+	)
+endif()
 
 ######################################################################################
 ##  							INSTALL  					##

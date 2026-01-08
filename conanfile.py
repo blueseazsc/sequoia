@@ -1,7 +1,7 @@
 from conan import ConanFile
 
-class Project(ConanFile):
 
+class Project(ConanFile):
     # all project are the same:
     python_requires = "project_base/1.0"
     python_requires_extend = "project_base.ProjectBase"
@@ -16,10 +16,11 @@ class Project(ConanFile):
     def requirements(self):
         self.requires("spdlog/1.14.1")
         self.requires("doctest/2.4.11")
-        self.requires("odb/2.5.0", transitive_headers=True, transitive_libs=True)
+        self.requires("odb/2.5.0")
+        self.requires("tracy/0.11.1")
 
     def build_requirements(self):
         super().build_requirements()
         self.tool_requires("odb/2.5.0")
-    
+
     # def package_info(self):
