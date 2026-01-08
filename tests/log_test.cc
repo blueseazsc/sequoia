@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
 #include <doctest/doctest.h>
-#include <sequoia/utils/log.h>
+#include <sequoia/utils/log/log.h>
 #include <string>
 
 using namespace sequoia::utils::log;

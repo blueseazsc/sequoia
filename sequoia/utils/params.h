@@ -9,7 +9,7 @@
 #include <compare>
 #include <fmt/format.h>
 #include <sequoia/utils/types.h>
-#include <sequoia/utils/log.h>
+#include <sequoia/utils/log/log.h>
 
 namespace sequoia::utils {
 
